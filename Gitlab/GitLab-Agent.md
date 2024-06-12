@@ -171,6 +171,8 @@ ci_access:
 ```
 
 #### Ref:
+- Youtube
 1. [How to Build and Deploy and app on K8S by GitLab CI/CD pipeline](https://youtu.be/fwtxi_BRmt0?si=mzOx3satl8CPMhzV)
-2. [Using GitLab CI/CD with a K8S cluster](https://docs.gitlab.com/ee/user/clusters/agent/ci_cd_workflow.html)
-3. [Build and push container images to the container registry](https://docs.gitlab.com/ee/user/packages/container_registry/build_and_push_images.html)
+- GitLab Document
+1. [Using GitLab CI/CD with a K8S cluster](https://docs.gitlab.com/ee/user/clusters/agent/ci_cd_workflow.html)
+2. [Build and push container images to the container registry](https://docs.gitlab.com/ee/user/packages/container_registry/build_and_push_images.html)
