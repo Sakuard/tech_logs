@@ -1,4 +1,4 @@
-[Back](../README.md)
+[Back to Main](https://github.com/Sakuard/tech_logs/blob/main/README.md)
 ### GitOps: Build and Deploy on K8S via Gitlab-CI with Gitlab-Agnet
 ![GitOps-Flow](https://hackmd.io/_uploads/HJNG9VBrC.png)
 > Flow
