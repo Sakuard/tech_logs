@@ -27,7 +27,9 @@ jobs:
           pwd
           ls -la
           cd Gitlab
-          git remote -v
+          git remote add gitlab https://github.com/Sakuard/gitlab.git
+          git fetch gitlab
+          git status
           # git add .
           # git commit -m "feat: submodules update sync"
           # git push origin main
