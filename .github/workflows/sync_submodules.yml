@@ -24,8 +24,10 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          cd GitLab
-          git add .
-          git commit -m "feat: submodules update sync"
-          git remote add origin https://github.com/Sakuard/gitlab.git
-          git push origin main
+          pwd
+          ls -la
+          # cd GitLab
+          # git add .
+          # git commit -m "feat: submodules update sync"
+          # git remote add origin https://github.com/Sakuard/gitlab.git
+          # git push origin main
