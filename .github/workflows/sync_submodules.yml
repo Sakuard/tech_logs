@@ -27,4 +27,5 @@ jobs:
           pwd
           ls
           cd Gitlab
+          git remote -v
           git status
