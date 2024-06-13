@@ -3,42 +3,35 @@ name: Sync Submodules
 on:
   push:
     branches:
-      - main
-  repository_dispatch:
-    types:
-      - update-submodule
+      - main  # 或您使用的預設分支名稱
 
 jobs:
-  sync-submodules:
+  update_submodules:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GH_PAT }}
-        submodules: recursive
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 確保抓取所有歷史和子模組
 
-    - name: Set up Git
-      run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+      - name: Setup Git
+        run: |
+          git config --global user.email "icycatsakura@gmail.com"
+          git config --global user.name "Sakuard"
 
-    - name: Update submodules
-      run: |
-        git submodule update --init --recursive --remote -f
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      - name: Update submodules
+        run: |
+          git submodule update --remote --recursive
+          git commit -am "feat: submodules update sync"
+          git push
 
-    - name: Commit and Push Submodule Changes
-      run: |
-        if [[ -n $(git status --porcelain) ]]; then
+      - name: Push changes to submodule repository
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          cd GitLab
           git add .
-          git commit -m "update: sync submodule references"
+          git commit -m "feat: submodules update sync"
+          git remote add origin https://github.com/Sakuard/gitlab.git
           git push origin main
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
