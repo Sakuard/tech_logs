@@ -20,14 +20,11 @@ jobs:
           git config --global user.email "icycatsakura@gmail.com"
           git config --global user.name "Sakuard"
 
-      - name: Fetch submodules
-        run: |
-          git submodule update --init --recursive
-
       - name: Sync submodules
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
+          git submodule update --init --recursive
           pwd
           ls -la
           cd Gitlab
