@@ -20,12 +20,6 @@ jobs:
           git config --global user.email "icycatsakura@gmail.com"
           git config --global user.name "Sakuard"
 
-      - name: Update submodules
-        run: |
-          git submodule update --remote --recursive
-          git commit -am "feat: submodules update sync"
-          git push
-
       - name: Push changes to submodule repository
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
