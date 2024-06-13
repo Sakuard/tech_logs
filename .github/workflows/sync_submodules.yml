@@ -1,0 +1,43 @@
+name: Sync Submodules
+
+on:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types:
+      - update-submodule
+
+jobs:
+  sync-submodules:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GH_PAT }}
+        submodules: recursive
+
+    - name: Set up Git
+      run: |
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+    - name: Update submodules
+      run: |
+        git submodule update --init --recursive --remote -f
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+    - name: Commit and Push Submodule Changes
+      run: |
+        if [[ -n $(git status --porcelain) ]]; then
+          git add .
+          git commit -m "Update submodule references"
+          git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
