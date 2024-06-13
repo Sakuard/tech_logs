@@ -27,8 +27,9 @@ jobs:
           pwd
           ls -la
           cd Gitlab
+          git remote add origin https://github.com/Sakuard/gitlab.git
+          # git pull --rebase origin main
           git status
           # git add .
           # git commit -m "feat: submodules update sync"
-          # git remote add origin https://github.com/Sakuard/gitlab.git
           # git push origin main
