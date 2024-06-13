@@ -28,6 +28,8 @@ jobs:
           ls -la
           cd Gitlab
           git init
+          git config --global user.email "icycatsakura@gmail.com"
+          git config --global user.name "Sakuard"
           git remote add gitlab https://github.com/Sakuard/gitlab.git
           git fetch gitlab
           git status
