@@ -39,6 +39,6 @@ jobs:
           git add .
           git commit -m "update: sync submodule references"
           git push origin main
-        if
+        fi
       env:
         GITHUB_TOKEN: ${{ secrets.GH_PAT }}
