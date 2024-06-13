@@ -24,15 +24,15 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
-          git submodule update --init --recursive
           pwd
           ls -la
           cd Gitlab
+          git init
           git remote add gitlab https://github.com/Sakuard/gitlab.git
           git fetch gitlab
           git status
-          git rebase gitlab/main
-          git push gitlab main --force
+          # git rebase gitlab/main
+          # git push gitlab main --force
           # git add .
           # git commit -m "feat: submodules update sync"
 
