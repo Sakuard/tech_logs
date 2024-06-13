@@ -25,16 +25,6 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           pwd
-          ls -la
+          ls
           cd Gitlab
-          git init
-          git config --global user.email "icycatsakura@gmail.com"
-          git config --global user.name "Sakuard"
-          git remote add gitlab https://github.com/Sakuard/gitlab.git
-          git fetch gitlab
           git status
-          # git rebase gitlab/main
-          # git push gitlab main --force
-          # git add .
-          # git commit -m "feat: submodules update sync"
-
