@@ -1,31 +1,33 @@
-name: Sync Submodules
-
+name: Update Submodule
 on:
-  push:
-    branches:
-      - main  # 或您使用的預設分支名稱
-
+  repository_dispatch:
+    types:
+      - update-submodule
 jobs:
-  update_submodules:
+  update-submodule:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # 確保抓取所有歷史和子模組
-
-      - name: Setup Git
+          token: ${{ secrets.GH_PAT }}  # 確保這個令牌具有適當的訪問權限
+          submodules: recursive
+      - name: Authorize Git
         run: |
-          git config --global user.email "icycatsakura@gmail.com"
-          git config --global user.name "Sakuard"
-
-      - name: Sync submodules
+          git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git config --global user.name "$GITHUB_ACTOR"
+      - name: Update submodule
+        run: |
+          git submodule update --init --recursive --remote -f
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+      - name: Commit changes
         run: |
-          pwd
-          ls
-          cd Gitlab
-          git remote -v
-          git status
+          git add GitLab
+          git commit -m "Update submodule to latest commit"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
