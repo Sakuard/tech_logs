@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch update to Tech Logs Project
-        uses: peter-evans/repository-dispatch@v4
+        uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GH_PAT }}  # 需要設定一個包含repo權限的個人訪問令牌
           repository: Sakuard/tech_logs

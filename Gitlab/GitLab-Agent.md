@@ -1,8 +1,13 @@
-[To Main](https://github.com/Sakuard/tech_logs/blob/main/README.md)
+[To Main](https://github.com/Sakuard/tech_logs/blob/main/README.md)<br/>[Demo Repo](https://gitlab.com/matt.lab/git-agent)
 
 ### GitOps: Build and Deploy on K8S via Gitlab-CI with Gitlab-Agnet
+
+<span id="home"></span>
+
 ![GitOps-Flow](https://hackmd.io/_uploads/r1tMP9LrC.png)
+
 > Flow
+
 1. Commit a new udpate to a repository.
 2. Trigger Gitlab-ci.
 3. In ```.gitlab-ci.yml```, stage: build
@@ -30,7 +35,6 @@ Trigger Gitlab-Agent.
 3. Build a .gitlab-ci.yml
 
 ### Step by Step
-
 1. Create 2 repo
 One for Gitlab-Agnet([ref](https://docs.gitlab.com/ee/user/clusters/agent/ci_cd_workflow.html)), another for Project
 ```bash=
@@ -178,3 +182,5 @@ ci_access:
 - GitLab Document
 1. [Using GitLab CI/CD with a K8S cluster](https://docs.gitlab.com/ee/user/clusters/agent/ci_cd_workflow.html)
 2. [Build and push container images to the container registry](https://docs.gitlab.com/ee/user/packages/container_registry/build_and_push_images.html)
+
+[返回](#home)
