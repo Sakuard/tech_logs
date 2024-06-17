@@ -4,7 +4,8 @@
 
 <span id="home"></span>
 
-![Helm-Pipeline](https://hackmd.io/_uploads/rJ_w_f6rC.png)
+<!-- ![Helm-Pipeline](https://hackmd.io/_uploads/rJ_w_f6rC.png) -->
+![Helm-Pipeline](./src/GitLab-Helm.png)
 
 >Requirement
 

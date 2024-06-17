@@ -4,7 +4,8 @@
 
 <span id="home"></span>
 
-![GitOps-Flow](https://hackmd.io/_uploads/r1tMP9LrC.png)
+<!-- ![GitOps-Flow](https://hackmd.io/_uploads/r1tMP9LrC.png) -->
+![GitOps-Flow](./src/GitLab-Agent.png)
 
 > Flow
 
