@@ -60,7 +60,7 @@ helm uninstall demo-app
 helm package ./demo/
 # push to helm-repo
 curl --fail-with-body --request POST \
-     --form 'chart=@mychart-0.1.0.tgz' \
+     --form 'chart=@demo-0.1.0.tgz' \
      --user <username>:<personal_access_token> \
      https://gitlab.com/api/v4/projects/<project_id>/packages/helm/api/<channel>/charts
 
