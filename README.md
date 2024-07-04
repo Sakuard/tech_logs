@@ -7,6 +7,9 @@
 ### K8S
 - [Helm]
 
+### 生產力工具
+- [Raycast](./Raycast.md)
+
 ```bash=
 # add submodule
 git submodule add <repo_url> <path>
