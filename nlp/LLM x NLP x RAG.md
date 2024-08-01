@@ -12,7 +12,8 @@
 
 :star: 最後帶入一些實際關於 RAG 的範例
 
-![AI x ML x NLP](https://hackmd.io/_uploads/rJbiO6wYA.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
+<!-- ![AI x ML x NLP](https://hackmd.io/_uploads/rJbiO6wYA.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/) -->
+![AI x ML x NLP](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_74a318e77203be0c94b02d5009719a43.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1722479034&Signature=z72N0W%2BM7Igm4NHnpOac65iUUQM%3D)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
 
 
 ## :question: What is LLM
