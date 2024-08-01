@@ -3,9 +3,10 @@
 ### GitOps
 - [GitLab-Agent](./Gitlab/GitLab-Agent.md):automatically deploy service to K8S cluster.
 - [GitLab-Helm](./Gitlab/GitLab-Helm.md):automatically deploy service to K8S cluster.
+- [ArgoCD](./k8s/ArgoCD.md):automatically deploy service to K8S cluster.
 
 ### K8S
-- [Helm]
+- [Helm](./k8s/Helm.md):K8s service deploy/management tool
 
 ### 生產力工具
 - [Raycast](./Raycast.md)
