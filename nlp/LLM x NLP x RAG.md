@@ -1,7 +1,7 @@
 ## Retrieval Augmented Generation (RAG)
 
 檢索增強生成
-文章難易度：★★★☆☆
+文章難易度：★★☆☆☆
 
 :star: 本篇著重在
 - **什麼是 RAG 及其應用**
@@ -15,9 +15,7 @@
 <!-- ![AI x ML x NLP](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_74a318e77203be0c94b02d5009719a43.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1722479034&Signature=z72N0W%2BM7Igm4NHnpOac65iUUQM%3D)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/) -->
 ![AI x ML x NLP](./src/AIxMLxNLP.png)來源：[inwedo - ML,NLP,LLM, and Deep Learning Explained Exploring the Bussiness Potential of AI](https://inwedo.com/blog/business-potential-of-ai-solutions/)
 
-
 ## :question: What is LLM
-
 :heavy_check_mark: 一個文字接龍的生成式模型
 - LLM的回應生成，可以粗略的視為
     :point_right: 回應句子的每一個字都是機率算出來的
@@ -56,7 +54,8 @@
 ## :question: What is NLP
 :heavy_check_mark: NLP(Natrual Language Processing) 即是自然語言處理
 - ML 的訓練結果如潘朵拉的盒子
-    :point_right: ML 訓練出來的模型，每次結果的好壞是較難以預測，而 NLP 的訓練過程與結果相對容易控制
+    :point_right: ML 訓練出來的模型，每次結果的好壞是較難以預測，且費時
+    :point_right: NLP 的訓練過程與結果相對容易控制
 
 ## :question: What is RAG
 :heavy_check_mark: RAG 是基於 NLP 發展出來的一種技術
@@ -69,7 +68,9 @@
 
 <!-- ![Basic RAG Structure](https://hackmd-prod-images.s3-ap-northeast-1.amazonaws.com/uploads/upload_52a0ecd716a5283713470c0b68e471bf.png?AWSAccessKeyId=AKIA3XSAAW6AWSKNINWO&Expires=1722479237&Signature=azXOC%2BUYsJ3bsYjhiwSf3k8%2FGt4%3D) -->
 ![Basic RAG Structure](./src/rag/basic_rag_structure.png)
-> ## 最基本的可以分成兩大部分
+:::info
+### RAG 最基本的可以分成兩大部分
+:::
 
 1. 資料外掛
 2. 資料檢索與生成
@@ -77,6 +78,8 @@
 ### :star2: 資料外掛
 將 LLM 的認知範圍，限縮鎖定在我們希望的特定範圍內
 我們會將這些特定範圍的資料，以 Embedding 的方式儲存在資料庫
+
+*Embedding 是一種將物件(如：單詞、句子、圖片、檔案)向量化的方式(結果通常是一個數學矩陣)*
 
 :exclamation: 由於機器並不認得我們的自然語言，在機器的世界裡，都是 0,1 的數字，所以我們透過 Embedding 的技術，機器才得以認得我們的語言
 
@@ -160,8 +163,34 @@ output = ollama.generate(
 
 print(output['response'])
 ```
+:point_right: 回應範例
+```
+Llamas are members of the camelid family, which means they are closely related to other animals such as:
+
+1. Vicuñas: Vicuñas are small, wild relatives of llamas and alpacas. They are native to South America and are known for their soft, woolly coats.
+2. Camels: As the name suggests, camels are also members of the camelid family. They are known for their large size, long eyelashes, and ability to survive in hot, dry environments.
+3. Alpacas: Alpacas are domesticated animals that are closely related to llamas and vicuñas. They are native to South America and are known for their soft, luxurious fibers.
+
+So, to summarize, llamas are related to vicuñas, camels, and alpacas. These animals share similar physical and behavioral characteristics due to their shared evolutionary history within the camelid family.
+```
 
 ---
-下一篇：RAG Optimize
+延伸閱讀：
+- [RAG Optimize: Data-Chunk](https://hackmd.io/xOaOwrINQL6f7I5MTsPbgQ)
+
+#### Figure-out
+- infra of Re-Ranking(how does it works)
+- collection schema deaign(base on what?)
+- Active RAG
+
+#### Optimize brainstorming (待驗證)
+- 透過 Query 持續強化學習, two db controll ( source-data / query optimize )
+- mixture of GraphDB?
+- optimize "prompt" with different type of Query question to exec difference process
+- embedding full-context / key-context 
+
+#### interface
+- Slack
+- Line
 
 關鍵字 : AI, ML, NLP, RAG, Embeddings
